@@ -1,0 +1,15 @@
+:root{
+    --background-color-dark:hsl(207, 26%, 17%);
+    --color-text-dark: hsl(0, 0%, 100%);    
+    --elements-dark: hsl(209, 23%, 22%);
+    
+    --background-color-light:hsl(0, 0%, 98%);
+    --color-text-light: hsl(200, 15%, 8%);
+    --elements-light: hsl(0, 0%, 100%);
+    --input-light: hsl(0, 0%, 52%);
+
+    --font-family: 'Nunito Sans', sans-serif;
+    --weight-minimy: 300;
+    --weight-normal: 600;
+    --weight-bold: 800;
+}
