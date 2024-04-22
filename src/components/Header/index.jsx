@@ -15,7 +15,7 @@ export default function Header () {
 const HeaderStyled = styled.header`
     background-color: var(--elements-dark);
     color: var(--color-text-dark);
-    padding: 1rem;
+    padding: 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;

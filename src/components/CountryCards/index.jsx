@@ -3,21 +3,20 @@ import styled from "styled-components"
 
 export default function CountryCards({ data }) {
     return (
-        <CardsList className="country-cards">
+        <CardsList id="country-cards">
             {data.map(country =>
-                <Link to={'/countries-api/'} key={country.name.common}>
+                <Link to={`/countries-api/country-page/${country.name.common}`} key={country.name.common} className="country-cards__card-link">
                     <Card>
                         <img src={country.flags.png} alt={`flag of ${country.name.common}`} />
                         <Text>
-                            <h3>{country.name.common}</h3>
+                            <h3 className="country-cards__card--name">{country.name.common}</h3>
                             <p>Population: <span>{country.population.toLocaleString('en')}</span></p>
                             <p>Region: <span>{country.region}</span></p>
                             <p>Capital: <span>{country.capital}</span></p>
                         </Text>
                     </Card>
                 </Link>
-            )
-            }
+            )}
         </CardsList>
     )
 }
@@ -37,6 +36,7 @@ const CardsList = styled.ul`
 const Card = styled.li`
     background-color: var(--elements-dark);
     border-radius: 1rem;
+    box-shadow: 0 0 0 1rem var(--shadow-color-dark);
     height: 35rem;
     img{
         width: 100%;
@@ -44,6 +44,9 @@ const Card = styled.li`
         object-position: center;
         object-fit: cover;
         border-radius: 1rem 1rem 0 0;
+    }
+    @media (width > 1440px){
+        height: 40rem;
     }
 `
 

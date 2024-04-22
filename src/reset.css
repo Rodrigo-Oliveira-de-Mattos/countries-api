@@ -7,6 +7,14 @@
 html{
     font-size: 62.5%;
     font-family: var(--font-family);
+    color: var(--color-text-dark)
+}
+
+main{
+    box-shadow: inset 0 0 5px 5px var(--shadow-color-dark);
+    padding: 2rem;
+    background-color: var(--background-color-dark);
+    min-height: calc(100svh - 75px);
 }
 
 ul{
@@ -15,4 +23,5 @@ ul{
 
 a{
     text-decoration: none;
+    color: var(--color-text-dark)
 }

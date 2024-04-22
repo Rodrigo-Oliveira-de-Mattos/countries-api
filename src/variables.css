@@ -1,5 +1,6 @@
 :root{
     --background-color-dark:hsl(207, 26%, 17%);
+    --shadow-color-dark:hsla(208, 25%, 10%, 0.15);
     --color-text-dark: hsl(0, 0%, 100%);    
     --elements-dark: hsl(209, 23%, 22%);
     
