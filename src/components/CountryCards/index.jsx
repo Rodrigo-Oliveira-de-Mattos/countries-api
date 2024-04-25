@@ -34,9 +34,9 @@ const CardsList = styled.ul`
 `
 
 const Card = styled.li`
-    background-color: var(--elements-dark);
+    background-color: var(--elements);
     border-radius: 1rem;
-    box-shadow: 0 0 0 1rem var(--shadow-color-dark);
+    box-shadow: 0 0 10px 5px var(--shadow-color);
     height: 35rem;
     img{
         width: 100%;
@@ -52,7 +52,7 @@ const Card = styled.li`
 
 const Text = styled.div`
     padding: 2rem;
-    color: var(--color-text-dark);
+    color: var(--color-text);
     letter-spacing: 1px;
     font-size: 1em;
     h3{

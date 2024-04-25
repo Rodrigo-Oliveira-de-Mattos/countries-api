@@ -33,8 +33,8 @@ export default function CountryPage() {
     const languages = languagesArray.map((language) => {
         return data[0].languages[language]
     })
-    const bordersArray = data[0].borders
-    console.log(data);
+    const bordersArray = data[0].borders || ["no borders"]
+    console.log(bordersArray);
 
     return (
         <Main>
@@ -46,7 +46,7 @@ export default function CountryPage() {
                     <div>
                         <Ul>
                             <li>Native Name: <span>{nativeName}</span></li>
-                            <li>PopUlation: <span>{population}</span></li>
+                            <li>PopUlation: <span>{population.toLocaleString('en') }</span></li>
                             <li>Region: <span>{region}</span></li>
                             <li>Sub Region: <span>{subregion}</span></li>
                             <li>Capital: <span>{capital}</span></li>
@@ -73,7 +73,7 @@ const Main = styled.main`
     flex-direction: column;
     gap: 5rem;
     a{
-        background-color: var(--elements-dark);
+        background-color: var(--elements);
         width: fit-content;
         padding: 5px 2rem;
         margin: 1rem 0;
@@ -82,7 +82,7 @@ const Main = styled.main`
         font-size: 1.4em;
         display: flex;
         align-items: center;
-        box-shadow: 0 0 2px 3px var(--shadow-color-dark);
+        box-shadow: 0 0 2px 3px var(--shadow-color);
         &::before{
             content: "⬅";
             margin-right: 0.5rem;
@@ -125,6 +125,7 @@ const Texts = styled.div`
     gap: 1.5rem;
     width: 100%;
     justify-content: space-between;
+    color: var(--color-text);
 
     div{
         display: flex;
@@ -178,7 +179,7 @@ const P = styled.div`
         font-size: 0.8em;
         text-transform: capitalize;
         font-weight: var(--weight-minimy);
-        background-color: var(--elements-dark);
+        background-color: var(--elements);
         padding: 5px 1rem;
         margin-left: 1rem;
         border-radius: 5px;

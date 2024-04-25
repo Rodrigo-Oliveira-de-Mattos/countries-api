@@ -1,16 +1,24 @@
-:root{
-    --background-color-dark:hsl(207, 26%, 17%);
-    --shadow-color-dark:hsla(208, 25%, 10%, 0.15);
-    --color-text-dark: hsl(0, 0%, 100%);    
-    --elements-dark: hsl(209, 23%, 22%);
-    
-    --background-color-light:hsl(0, 0%, 98%);
-    --color-text-light: hsl(200, 15%, 8%);
-    --elements-light: hsl(0, 0%, 100%);
-    --input-light: hsl(0, 0%, 52%);
+:root {
+  --background-color: hsl(207, 26%, 17%);
+  --shadow-color: hsla(208, 25%, 10%, 0.15);
+  --color-text: hsl(0, 0%, 100%);
+  --elements: hsl(209, 23%, 22%);
+  --input: hsl(209, 23%, 22%);
 
-    --font-family: 'Nunito Sans', sans-serif;
-    --weight-minimy: 300;
-    --weight-normal: 600;
-    --weight-bold: 800;
+  --font-family: "Nunito Sans", sans-serif;
+  --weight-minimy: 300;
+  --weight-normal: 600;
+  --weight-bold: 800;
+
+  --icon-theme: '🌙';
+}
+
+[data-theme="light"] {
+  --background-color: hsl(0, 0%, 98%);
+  --shadow-color: hsla(208, 25%, 50%, 0.2);
+  --color-text: hsl(200, 15%, 8%);
+  --elements: hsl(0, 0%, 100%);
+  --input: hsl(0, 0%, 52%);
+  --icon-theme: '☀️';
+
 }

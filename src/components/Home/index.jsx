@@ -83,9 +83,9 @@ const Main = styled.main`
     padding: 1.5rem;
     border: none;
     border-radius: 0.5rem;
-    background-color: var(--elements-dark);
+    background-color: var(--elements);
     &::-webkit-input-placeholder{ 
-      color: var(--color-text-dark)
+      color: var(--color-text)
     }
   }
 `
@@ -105,12 +105,12 @@ const Inputs = styled.div`
   }
 
   *{
-    box-shadow: 0 0 15px 5px var(--shadow-color-dark);
+    box-shadow: 0 0 15px 5px var(--shadow-color);
     padding: 1.5rem;
     border: none;
     border-radius: 0.5rem;
-    background-color: var(--elements-dark);
-    color: var(--color-text-dark);
+    background-color: var(--elements);
+    color: var(--color-text);
     font-size: 1.4em;
     text-transform: capitalize;
     &:hover{
@@ -118,7 +118,7 @@ const Inputs = styled.div`
     }
 
     &::-webkit-input-placeholder{ 
-      color: var(--color-text-dark);
+      color: var(--color-text);
     }
 
     &:nth-child(2){ 
