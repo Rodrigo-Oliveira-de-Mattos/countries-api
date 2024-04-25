@@ -264,6 +264,7 @@ Error generating stack: `+o.message+`
     gap: 1.5rem;
     width: 100%;
     justify-content: space-between;
+    color: var(--color-text);
 
     div{
         display: flex;
