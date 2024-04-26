@@ -3,7 +3,7 @@
   --shadow-color: hsla(208, 25%, 10%, 0.15);
   --color-text: hsl(0, 0%, 100%);
   --elements: hsl(209, 23%, 22%);
-  --input: hsl(209, 23%, 22%);
+  --elements-hover: hsl(209, 33%, 22%);
 
   --font-family: "Nunito Sans", sans-serif;
   --weight-minimy: 300;
@@ -18,7 +18,7 @@
   --shadow-color: hsla(208, 25%, 50%, 0.2);
   --color-text: hsl(200, 15%, 8%);
   --elements: hsl(0, 0%, 100%);
-  --input: hsl(0, 0%, 52%);
+  --elements-hover: hsl(0, 0%, 95%);
   --icon-theme: '☀️';
 
 }

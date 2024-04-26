@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useQuery } from "@tanstack/react-query"
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import Borders from '../Borders';
 
 export default function CountryPage() {
 
@@ -13,12 +14,12 @@ export default function CountryPage() {
     }
 
     const { isPending, isError, data, error } = useQuery({
-        queryKey: ['country'],
+        queryKey: ['country', country],
         queryFn: fetchCountriesApi
     })
 
-    if (isPending) return <span>Loading...</span>
-    if (isError) return <span>Error: {error.message}</span>
+    if (isPending) return <main><span>Loading...</span></main>
+    if (isError) return <main><span>Error: {error.message}</span></main>
 
     const flag = data[0].flags.png
     const name = data[0].name.common
@@ -33,12 +34,11 @@ export default function CountryPage() {
     const languages = languagesArray.map((language) => {
         return data[0].languages[language]
     })
-    const bordersArray = data[0].borders || ["no borders"]
-    console.log(bordersArray);
+    const bordersArrayAlpha = data[0].borders || ["no borders"]
 
     return (
         <Main>
-            <Link to={'/countries-api/'}>Back</Link>
+            <Link to={'/countries-api/'}><span>Back</span></Link>
             <Section>
                 <Img src={flag} alt="" />
                 <Texts>
@@ -46,7 +46,7 @@ export default function CountryPage() {
                     <div>
                         <Ul>
                             <li>Native Name: <span>{nativeName}</span></li>
-                            <li>PopUlation: <span>{population.toLocaleString('en') }</span></li>
+                            <li>PopUlation: <span>{population.toLocaleString('en')}</span></li>
                             <li>Region: <span>{region}</span></li>
                             <li>Sub Region: <span>{subregion}</span></li>
                             <li>Capital: <span>{capital}</span></li>
@@ -59,8 +59,12 @@ export default function CountryPage() {
                             })}</li>
                         </Ul>
                     </div>
-                    <P>Border Countries: {bordersArray.map((b) => {
-                        return <span key={b}>{b}</span>
+                    <P>Border Countries: {bordersArrayAlpha.map((b) => {
+                        if (b === "no borders") {
+                            return <span key={b} className="borders">{b}</span>
+                        } else {
+                            return <Borders alphaCode={b} key={b}/>
+                        }
                     })}</P>
                 </Texts>
             </Section>
@@ -83,7 +87,11 @@ const Main = styled.main`
         display: flex;
         align-items: center;
         box-shadow: 0 0 2px 3px var(--shadow-color);
-        &::before{
+        &:hover{
+            background-color: var(--elements-hover);
+            transform: scale(1.02);
+        }
+        span::before{
             content: "⬅";
             margin-right: 0.5rem;
         }
@@ -157,7 +165,7 @@ const Ul = styled.ul`
         letter-spacing: 1px;
         font-size: 1.4em;
         font-weight: var(--weight-normal);
-        span{
+        .border-countries{
             font-weight: var(--weight-minimy);
         }
         .languages{
@@ -175,13 +183,4 @@ const P = styled.div`
     font-weight: var(--weight-normal);
     letter-spacing: 1px;
     flex-wrap: wrap;
-    span{
-        font-size: 0.8em;
-        text-transform: capitalize;
-        font-weight: var(--weight-minimy);
-        background-color: var(--elements);
-        padding: 5px 1rem;
-        margin-left: 1rem;
-        border-radius: 5px;
-    }
 `

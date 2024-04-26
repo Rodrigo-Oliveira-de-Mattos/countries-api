@@ -18,8 +18,8 @@ export default function Home() {
     })
 
 
-    if (isPending) return <span>Loading...</span>
-    if (isError) return <span>Error: {error.message}</span>
+    if (isPending) return <main><span>Loading...</span></main>
+    if (isError) return <main><span>Error: {error.message}</span></main>
 
     const lowerSearch = search.toLowerCase()
 
@@ -100,7 +100,7 @@ const Inputs = styled.div`
 
   input{
     &:hover{
-      opacity: 0.8;
+      background-color: var(--elements-hover);
     }
   }
 
@@ -114,7 +114,7 @@ const Inputs = styled.div`
     font-size: 1.4em;
     text-transform: capitalize;
     &:hover{
-      opacity: 0.8;
+      background-color: var(--elements-hover);
     }
 
     &::-webkit-input-placeholder{ 

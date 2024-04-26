@@ -45,6 +45,10 @@ const Card = styled.li`
         object-fit: cover;
         border-radius: 1rem 1rem 0 0;
     }
+    &:hover{
+        background-color: var(--elements-hover);
+        transform: scale(1.02);
+    }
     @media (width > 1440px){
         height: 40rem;
     }
