@@ -5,17 +5,17 @@ export default function CountryCards({ data }) {
     return (
         <CardsList id="country-cards">
             {data.map(country =>
-                <Link to={`/countries-api/country-page/${country.name.common}`} key={country.name.common} className="country-cards__card-link">
-                    <Card>
+                <Card>
+                    <Link to={`/countries-api/country-page/${country.name.common}`} key={country.name.common} className="country-cards__card-link">
                         <img src={country.flags.png} alt={`flag of ${country.name.common}`} />
                         <Text>
-                            <h3 className="country-cards__card--name">{country.name.common}</h3>
+                            <h2 className="country-cards__card--name">{country.name.common}</h2>
                             <p>Population: <span>{country.population.toLocaleString('en')}</span></p>
                             <p>Region: <span>{country.region}</span></p>
                             <p>Capital: <span>{country.capital}</span></p>
                         </Text>
-                    </Card>
-                </Link>
+                    </Link>
+                </Card>
             )}
         </CardsList>
     )
@@ -59,7 +59,7 @@ const Text = styled.div`
     color: var(--color-text);
     letter-spacing: 1px;
     font-size: 1em;
-    h3{
+    h2{
         font-size: 1.6em;
         font-weight: var(--weight-bold);
         margin-bottom: 2rem;
